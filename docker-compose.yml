@@ -1,7 +1,6 @@
 version: '2'
 volumes:
         unifi-data:
-        unms-data:
         nginx-data:
         letsencrypt:
 services:
@@ -19,7 +18,6 @@ services:
 
                 links:
                         - "unifi"
-                        - "unms"
         unifi:
                 build: ./unifi
                 ports:
@@ -30,7 +28,3 @@ services:
                         - "8080:8080" # Device controller communication
                 volumes:
                         - "unifi-data:/unifi"
-        unms:
-                build: ./unms
-                volumes:
-                        - "unms-data:/config"
