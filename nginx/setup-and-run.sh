@@ -4,11 +4,11 @@ set -e
 
 DHPARAM_PATH=${DHPARAM_PATH:-/app/data/ssl}
 SELFCERT_PATH=${SELFCERT_PATH:-/app/data/ssl}
-SELFCERT_COUNTRY=${CERT_COUNTRY:-UK}
+SELFCERT_COUNTRY=${CERT_COUNTRY:-US}
 LETSENCRYPT_PATH=/etc/letsencrypt/live
 CLOUDFLARE_CREDS=/etc/cloudflare/creds.ini
 NGINX_SPEC=/app/nginx-spec.conf
-SERVICES=(unifi:8443 unms:443)
+SERVICES=(unifi:8443)
 CERTBOT="certbot"
 
 function log { echo "[$1] $2"; }
